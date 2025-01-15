@@ -5,7 +5,8 @@ interface Props {
   params: { id: number };
 }
 
-const UserDetailPage = ({ params: { id } }: Props) => {
+async function UserDetailPage({ params }: Props) {
+  const { id } = await params;
   if (id > 10) notFound();
   return <div> UserDetailPage {id} </div>;
 };
